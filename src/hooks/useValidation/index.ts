@@ -44,6 +44,8 @@ const useValidation = (initialState: any, validate: any, fn: any) => {
         [e.target.name]: e.target.value
       });
     }
+    // TODO: Add Mask for expiry date 
+    // if ( e.target.name === 'cardExpiryDate') dateInputMask(e.target.value)
   };
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>): void => {
