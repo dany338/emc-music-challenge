@@ -57,7 +57,13 @@ Say what the step will be
 npm run fake-api
 ```
 
-And Open a new terminal
+And Open a new terminal for run the server
+
+```
+npm run fake-api
+```
+
+And Open a new terminal for run the app
 
 ```
 npm run start
