@@ -24,8 +24,21 @@ export const Welcome = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: ${Colors.white};
+  box-shadow: 0px 24px 64px rgba(22, 27, 45, 0.05);
+  border-radius: 5px;
+  padding: 1rem;
+
+  &:hover, &:focus {
+    border-radius: 0.5rem;
+    transition: outline-offset 0.1s ease;
+    outline-offset: 4px;
+    outline: ${Colors.backgroundColorBadgeRed} auto 1px;
+    cursor: pointer;
+  }
 
   p {
+    margin: 0.5rem;
     padding: 1.438rem 0rem;
     font-family: "Roboto", sans-serif;
     font-style: normal;

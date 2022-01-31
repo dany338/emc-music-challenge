@@ -53,16 +53,16 @@ export const validateSignIn = (values: ISignInProps) => {
 };
 
 export const validateCustomerInformation = (values: ICustomerInformationProps) => {
-  console.log('values', values);
   const errors = {};
   validateFirstName(values.firstName, errors);
   validateLastName(values.lastName, errors);
   validateAddress(values.address, errors);
-  validateOutsideUS(values.outsideUS, errors);
+  // validateOutsideUS(values.outsideUS, errors);
   validateCountry(values.country, errors);
   validateCity(values.city, errors);
   validatePostalCode(values.postalCode, errors);
   validatePhoneNumber(values.phoneNumber, errors);
+  console.log('values', values, errors);
   return errors;
 };
 

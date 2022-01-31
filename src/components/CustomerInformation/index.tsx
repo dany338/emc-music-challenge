@@ -1,4 +1,6 @@
+import { useAtom } from 'jotai';
 import { lazy } from 'react';
+import { customerInfoAtom } from '../../atoms/payment';
 import { ICustomerInformationProps } from '../../entities/Payment';
 import useCustomerInformation from '../../hooks/useCustomerInformation';
 import useValidation from '../../hooks/useValidation';
@@ -27,12 +29,13 @@ const initialState = {
 // https://codesandbox.io/s/react-toggle-component-de4uy?from-embed=&file=/src/components/ToggleSwitch.js:393-397
 // https://www.sitepoint.com/react-toggle-switch-reusable-component/
 const CustomerInformation = () => {
+  const [ customerInfo, ] = useAtom(customerInfoAtom);
   const [
     errors,
     values,
     handleChange,
     handleSubmit
-  ] = useValidation(initialState, validateCustomerInformation, () => registerCustomerInformation());
+  ] = useValidation(customerInfo ? customerInfo : initialState, validateCustomerInformation, () => registerCustomerInformation());
 
   const [
     registerCustomerInformation,

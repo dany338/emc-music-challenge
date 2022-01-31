@@ -42,8 +42,8 @@ const useCustomerInformation = (values: ICustomerInformationProps) => {
       setIsLoading(true);
       setCustomerInfo(values);
       if (planSelected) {
-        const taxRate: number | undefined = taxes.find(tax => tax.id === values.city)?.taxRate;
-        const tax: number = taxRate ? ( (planSelected.price * taxRate) / 100 ) : 0;
+        const taxRate: number | undefined = taxes.find(tax => tax.id === +values.city)?.taxRate;
+        const tax: number = taxRate ? Math.ceil( (planSelected.price * taxRate) ) : 0;
         const newTotal = taxRate ? ( planSelected.price + tax ) : 0;
         setTax(tax);
         setTotal(newTotal);

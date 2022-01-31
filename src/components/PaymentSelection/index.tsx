@@ -10,6 +10,8 @@ import {
   PayPal,
 } from './styled';
 import PayPalLogo from '../../assets/logo/paypal.png';
+import { useAtom } from 'jotai';
+import { paymentSelectionAtom } from '../../atoms/payment';
 
 const TextField = lazy(() => import('../TextField'));
 const ButtonsOrder = lazy(() => import('../ButtonsOrder'));
@@ -23,12 +25,13 @@ const initialState = {
 } as IPaymentSelectionProps | any;
 
 const PaymentSelection = () => {
+  const [ paymentSelection, ] = useAtom(paymentSelectionAtom);
   const [
     errors,
     values,
     handleChange,
     handleSubmit
-  ] = useValidation(initialState, validatePaymentSelection, () => registerCompleteOrder());
+  ] = useValidation(paymentSelection ? paymentSelection : initialState, validatePaymentSelection, () => registerCompleteOrder());
 
   const [
     registerCompleteOrder,

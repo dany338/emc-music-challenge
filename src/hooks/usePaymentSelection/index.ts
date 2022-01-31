@@ -45,6 +45,8 @@ const usePaymentSelection = (values: IPaymentSelectionProps) => {
           await waitFor(100);
           navigate('/order-successfully-placed');
         }
+      } else {
+        console.log('Error: customerInfo or planSelected is undefined', customerInfo, planSelected, values);
       }
     } catch (error) {
       console.log(error);

@@ -48,7 +48,15 @@ export const Container = styled.div`
       padding: 1rem;
       width: 100%;
 
+      .line {
+        margin: 0.563rem;
+        width: 95%;
+        height: 0px;
+        border: 0.063rem solid ${Colors.colorLineSeparate};
+      }
+
       .card-content--row {
+        display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
@@ -73,6 +81,15 @@ export const Container = styled.div`
         .tax {
           padding-top: 0.5rem;
           color: ${Colors.colorTextDescriptionBlog};
+          font-family: "Roboto", sans-serif;
+          font-size: 0.8rem;
+          line-height: 1.5rem;
+        }
+
+        .total {
+          padding-top: 0.5rem;
+          color: ${Colors.backgroundColorBadgeRed};
+          font-weight: 900;
           font-family: "Roboto", sans-serif;
           font-size: 0.8rem;
           line-height: 1.5rem;
