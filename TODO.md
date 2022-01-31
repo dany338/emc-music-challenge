@@ -8,17 +8,21 @@ handles the unique state of the application through atomized and smaller particl
 
 ## ⛏️ Components: <a name = "built_using"></a>
 
-- CardCoin: Render a card with coin information.
+- CardPayment: Render a card with payments information.
 
-- Coins: I received the data and it is processed by each coin card one by one, it acts as a container.
+- Payments: I received the data and it is processed by each payments card one by one, it acts as a container.
 
 - Copyright: Shows the copyright on the development of this project.
 
-- DetailCoin: Shows a page with the detail of the selected coin.
+- FormOrder: Shows all tabs for complete order. This component call to
+
+```
+TabButton, CustomerInformation, TermsAndConditions, PaymentSelection, SelectedPlanView, SubtotalView, CreditCardPreview, OrderSummary,
+```
 
 - FormSign: Show a modal with an authentication form to be able to add favorite payments.
 
-- LoadMore: It shows a button that will perform the function of making the request to obtain more coins.
+- LoadMore: It shows a button that will perform the function of making the request to obtain more paymentss.
 
 - Modal: Show an overlay with a frame, which takes another component as a children and renders it internally.
 
@@ -28,7 +32,7 @@ handles the unique state of the application through atomized and smaller particl
 
 - PrivateRoute: This component is responsible for making routes private depending on whether the user is authenticated.
 
-- SearchBar: In the search bar you can enter a text and it searches for matches on the coins that are currently displayed. The search is done at the frontend level - locally on the coin object array.
+- SearchBar: In the search bar you can enter a text and it searches for matches on the paymentss that are currently displayed. The search is done at the frontend level - locally on the payments object array.
 
 - TextButton: It is responsible for showing a button of type submit or button as appropriate with its own styles.
 

@@ -79,7 +79,7 @@ Add additional notes about how to deploy this on a live system.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [stled components](https://styled-components.com/) - Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress
+- [styled components](https://styled-components.com/) - Visual primitives for the component age. Use the best bits of ES6 and CSS to style your apps without stress
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types
 - [json-server](https://github.com/typicode/json-server) - Server Environment Local Machine
 
