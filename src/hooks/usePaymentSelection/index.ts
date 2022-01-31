@@ -14,9 +14,9 @@ const usePaymentSelection = (values: IPaymentSelectionProps) => {
   const [ isLoading, setIsLoading ] = useState(false);
   const [ , setOrderTab ] = useAtom(orderTabAtom);
   const [ , setPaymentSelection ] = useAtom(paymentSelectionAtom);
-  const [ customerInfo, ] = useAtom(customerInfoAtom);
+  const [ customerInfo, setCustomerInfo ] = useAtom(customerInfoAtom);
   const [ user, ] = useAtom(userAtom);
-  const [ planSelected, ] = useAtom(planSelectedAtom);
+  const [ planSelected, setPlanSelected ] = useAtom(planSelectedAtom);
   const [ total, ] = useAtom(totalAtom);
   const [ , setCompleteOrder ] = useAtom(completeOrderAtom);
 
@@ -55,10 +55,19 @@ const usePaymentSelection = (values: IPaymentSelectionProps) => {
     }
   };
 
+  const onClearAll = (): void => {
+    setPaymentSelection(null);
+    setCustomerInfo(null);
+    setPlanSelected(null);
+    setOrderTab(0);
+    setCompleteOrder(false);
+  };
+
   return [
     registerCompleteOrder,
     isLoading,
     buttons,
+    onClearAll,
   ];
 };
 

@@ -5,7 +5,7 @@
       "role": "user",
       "name": "Thomas Anderson",
       "alias": "(The One)",
-      "avatarUrl": "https://www.historiaclinicaduo.com/historia/backend/web/images/gallery/default_avatar_male.jpg",
+      "avatarUrl": "https://www.historiaclinicaduo.com/blogs/default_avatar_male.jpg",
       "notifications": 1,
       "email": "thomas.anderson@gmail.com",
       "password": "123456"
@@ -15,7 +15,7 @@
       "role": "admin",
       "name": "Daniel Gallo",
       "alias": "(The Admin)",
-      "avatarUrl": "https://www.historiaclinicaduo.com/historia/backend/web/images/gallery/default_avatar_male.jpg",
+      "avatarUrl": "https://www.historiaclinicaduo.com/blogs/Ellipse.svg",
       "notifications": 0,
       "email": "dany338@gmail.com",
       "password": "123456"
@@ -396,38 +396,103 @@
       "id": 46,
       "countryId": 1,
       "name": "Oregon",
-      "taxRate": 0.0
+      "taxRate": 0
     },
     {
       "id": 47,
       "countryId": 1,
       "name": "New Hampshire",
-      "taxRate": 0.0
+      "taxRate": 0
     },
     {
       "id": 49,
       "countryId": 1,
       "name": "Montana",
-      "taxRate": 0.0
+      "taxRate": 0
     },
     {
       "id": 50,
       "countryId": 1,
       "name": "Delaware",
-      "taxRate": 0.0
+      "taxRate": 0
     },
     {
       "id": 51,
       "countryId": 1,
       "name": "Alaska",
-      "taxRate": 0.0
+      "taxRate": 0
     },
     {
       "id": 52,
       "countryId": 1,
       "name": "Other",
-      "taxRate": 0.0
+      "taxRate": 0
     }
   ],
-  "payments": []
+  "payments": [
+    {
+      "firstName": "Daniel Andres",
+      "lastName": "Gallo Garcia",
+      "address": "avenue street 15",
+      "outsideUS": false,
+      "country": "1",
+      "city": "1",
+      "postalCode": "+1",
+      "phoneNumber": "3044689778",
+      "paymentType": "Credit Card",
+      "userId": 1,
+      "planId": 1,
+      "createDate": "Mon Jan 31 2022 14:58:37 GMT-0500 (hora estándar de Colombia)",
+      "total": 1606,
+      "id": 1
+    },
+    {
+      "firstName": "Carlos",
+      "lastName": "Parra",
+      "address": "avenue street 15",
+      "outsideUS": false,
+      "country": "1",
+      "city": "11",
+      "postalCode": "+1",
+      "phoneNumber": "3007743211",
+      "paymentType": "PayPal",
+      "userId": 1,
+      "planId": 1,
+      "createDate": "Mon Jan 31 2022 15:04:25 GMT-0500 (hora estándar de Colombia)",
+      "total": 1598,
+      "id": 2
+    },
+    {
+      "firstName": "Tatiana",
+      "lastName": "Mejia",
+      "address": "avenue street 20",
+      "outsideUS": false,
+      "country": "1",
+      "city": "43",
+      "postalCode": "+1",
+      "phoneNumber": "3007743211",
+      "paymentType": "Credit Card",
+      "userId": 1,
+      "planId": 2,
+      "createDate": "Mon Jan 31 2022 15:19:00 GMT-0500 (hora estándar de Colombia)",
+      "total": 4680,
+      "id": 3
+    },
+    {
+      "firstName": "Natalia",
+      "lastName": "Vega",
+      "address": "carrera 11 # 57 D - 38",
+      "outsideUS": true,
+      "country": "2",
+      "city": "52",
+      "postalCode": "+57",
+      "phoneNumber": "3168738113",
+      "paymentType": "Credit Card",
+      "userId": 1,
+      "planId": 2,
+      "createDate": "Mon Jan 31 2022 15:33:44 GMT-0500 (hora estándar de Colombia)",
+      "total": 4500,
+      "id": 4
+    }
+  ]
 }

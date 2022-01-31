@@ -22,7 +22,7 @@ const CardPayment: React.FC<IPayment> = ({ planId, createDate, firstName, lastNa
     </div>
     <div className="textos">
       <h2 className="titulo">{`${firstName} ${lastName}`}</h2>
-		  <p className="description">Outside US: ${outsideUS ? 'Yes' : 'No'}</p>
+		  <p className="description">Outside US: {outsideUS ? 'Yes' : 'No'} - {planId === 1 ? 'For personal use' : 'For family use' }</p>
     </div>
     <div className="line" />
     <div className="footer">

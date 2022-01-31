@@ -1,14 +1,15 @@
 import TextButton from '../TextButton';
-import { useNavigate } from 'react-router-dom';
 import {
   Container,
   Wrapper,
   ContainerSuccess
 } from './styled';
 import ImagePaymentSuccess from '../../assets/images/payment-success.png';
+import usePaymentSuccess from '../../hooks/usePaymentSuccess';
 
 const PaymentSuccess = () => {
-  const navigate = useNavigate();
+  const [ onClearAll ] = usePaymentSuccess();
+
   return (
     <Container data-testid="notfound-container">
       <Wrapper>
@@ -16,7 +17,7 @@ const PaymentSuccess = () => {
           <div className="description">
             <span>ORDER SUCCESSFULLY PLACED</span>
             {/* <p>order successfully placed.</p> */}
-            <TextButton width="9.563" type="button" text="GO BACK TO HOME PAGE" onClick={() => navigate('/')} />
+            <TextButton width="14.563" type="button" text="GO BACK TO HOME PAGE" onClick={() => onClearAll() } />
           </div>
           <div className="image" />
         </ContainerSuccess>
