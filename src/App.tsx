@@ -1,26 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense } from 'react';
+import Copyright from './components/Copyright';
+import AppRouter from './AppRouter';
+import { IdentityProvider } from './providers/identity';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <IdentityProvider>
+    <Suspense fallback={<span>Loading...</span>}>
+      <AppRouter />
+      <Copyright />
+    </Suspense>
+  </IdentityProvider>
+)
 
 export default App;
