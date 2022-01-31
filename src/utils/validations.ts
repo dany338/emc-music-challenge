@@ -67,11 +67,9 @@ export const validateCustomerInformation = (values: ICustomerInformationProps) =
 };
 
 export const validatePaymentSelection = (values: IPaymentSelectionProps) => {
-  console.log('values', values);
   const errors = {};
   validatePaymentType(values.paymentType, errors);
   if (values.paymentType === 'Credit Card') {
-    console.log('entro', values);
     validateCardNumber(values.cardNumber, errors);
     validateCardName(values.cardName, errors);
     validateExpiryDate(values.cardExpiryDate, errors);

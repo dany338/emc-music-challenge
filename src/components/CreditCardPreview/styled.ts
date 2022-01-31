@@ -35,30 +35,43 @@ export const Container = styled.div`
       border-radius: 0.5rem;
       transition: outline-offset 0.1s ease;
       outline-offset: 4px;
-      outline: ${Colors.backgroundColorBadgeRed}; auto 1px;
+      outline: ${Colors.backgroundColorBadgeRed} auto 1px;
       cursor: pointer;
     }
 
     .card-content {
+      display: flex;
       justify-content: center;
-      align-items: center;
-      flex-direction: row;
+      flex-direction: column;
       margin: 1rem;
       padding: 1rem;
 
       .card-content--info {
+        align-items: flex-start;
         padding-top: 0.5rem;
         color: ${Colors.colorTextDescriptionBlog};
         font-family: "Roboto", sans-serif;
         font-size: 1rem;
         line-height: 1.5rem;
         text-transform: uppercase;
+
+        .card-expiry {
+          padding-top: 0.5rem;
+          color: ${Colors.colorTextResultsFounded};
+          font-family: "Roboto", sans-serif;
+          font-size: 1rem;
+          line-height: 1.5rem;
+        }
       }
 
       .card-content--logo {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: row;
         img {
-          width: 0.75rem;
-          height: 0.75rem;
+          width: 3.5rem;
+          height: 3rem;
         }
       }
     }

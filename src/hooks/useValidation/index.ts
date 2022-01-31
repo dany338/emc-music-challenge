@@ -39,7 +39,6 @@ const useValidation = (initialState: any, validate: any, fn: any) => {
     setErrors({ ...errors, [e.target.name]: '' });
     // Exeption case for credit card preview
     if (e.target.name === 'cardNumber' || e.target.name === 'cardName' || e.target.name === 'cardExpiryDate') {
-      console.log([e.target.name], e.target.value)
       setCardPreview({
         ...cardPreview,
         [e.target.name]: e.target.value
@@ -50,7 +49,6 @@ const useValidation = (initialState: any, validate: any, fn: any) => {
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const errorsValidation = validate(values);
-    console.log('entro', errorsValidation);
     setErrors(errorsValidation);
     setRequest(Object.keys(errorsValidation).length === 0);
     e.stopPropagation();
@@ -58,11 +56,9 @@ const useValidation = (initialState: any, validate: any, fn: any) => {
 
   useEffect(() => {
     setDidMount(true);
-    console.log('useEffect', values, request);
     if (request) {
       const withoutErrors = Object.keys(errors).length === 0 && Object.keys(validate(values)).length === 0;
       if (withoutErrors) {
-        console.log('withoutErrors', values);
         fn();
         memoizedCallback();
       }

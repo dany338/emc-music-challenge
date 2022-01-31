@@ -9,8 +9,8 @@ const useImage = (fileName: string) => {
 
   const fetchImage = async () => {
     try {
-      console.log(fileName);
-      const response = await import(`../../assets/logo/${fileName}`); // change relative path to suit your needs
+      console.log('fetchImage', fileName);
+      const response = await import(`../../assets/logo/${fileName}.png`); // change relative path to suit your needs
       setImage(response.default)
     } catch (err: any) {
       setError(err)

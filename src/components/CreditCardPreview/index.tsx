@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import creditCardType, {
   getTypeInfo,
@@ -16,6 +16,16 @@ const CreditCardPreview = () => {
   const fileName = creditCardType(cardPreview ? cardPreview.cardNumber : '');
   const type = fileName ? (fileName[0]?.type ? fileName[0].type : '') : '';
   const [ loading, error, image ] = useImage(type);
+  const [ , setDidMount] = useState<boolean>(false);
+
+  useEffect(() => {
+    setDidMount(true);
+    console.log('did mount type', type);
+    return () => {
+      setDidMount(false);
+      console.log('did not mount type', type);
+    }
+  }, [type]);
 
   if (!cardPreview) return null;
   if (error) return null;
@@ -26,9 +36,15 @@ const CreditCardPreview = () => {
       <div className="card">
         <div className="card-content">
           <div className="card-content--info">
-            <span className="card-number">{cardPreview.cardNumber}</span>
-            <span className="card-expiry">VALID THRU {cardPreview.cardExpiryDate}</span>
-            <span className="card-name">{cardPreview.cardName}</span>
+            <div>
+              <span className="card-number">{cardPreview.cardNumber}</span>
+            </div>
+            <div>
+              <span className="card-expiry">VALID THRU {cardPreview.cardExpiryDate}</span>
+            </div>
+            <div>
+              <span className="card-name">{cardPreview.cardName}</span>
+            </div>
           </div>
           <div className="card-content--logo">
             {loading ? <div>loading...</div> : ( <img src={image} alt="Credit card" /> )}
